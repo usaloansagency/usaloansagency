@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USA Loans - Financial Solutions</title>
+  <style>
+    :root {
+      --primary-blue: #0b2240;
+      --primary-red: #c8102e;
+      --light-blue: #eef5fb;
+      --text-dark: #333333;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-blue);
+      color: var(--text-dark);
+    }
+    
+    /* Header */
+    header {
+      background-color: var(--white);
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 4px solid var(--primary-red);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary-blue);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+      font-weight: bold;
+      font-size: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .logo-text h1 {
+      margin: 0;
+      color: var(--primary-blue);
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+    
+    .logo-text h1 span {
+      color: var(--primary-red);
+    }
+    
+    .logo-text p {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--primary-blue);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    
+    .contact-top {
+      text-align: right;
+    }
+    
+    .apply-btn-top {
+      background-color: var(--primary-red);
+      color: var(--white);
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    
+    .phone-top {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--primary-blue);
+      margin: 0;
+    }
+    
+    /* Hero Section */
+    .hero {
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .hero-content {
+      flex: 1;
+      padding: 50px;
+    }
+    
+    .hero-content h2 {
+      font-size: 42px;
+      color: var(--primary-blue);
+      margin-top: 0;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    
+    .hero-content h2 span {
+      color: var(--primary-red);
+    }
+    
+    .hero-content h3 {
+      font-size: 20px;
+      color: var(--primary-blue);
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    
+    .hero-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    
+    .hero-image {
+      flex: 1;
+      background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .trust-badge {
+      position: absolute;
+      bottom: 30px;
+      right: 30px; /* Moved to the right to avoid overlapping text on mid-sized screens */
+      background: var(--primary-blue);
+      color: var(--white);
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 8px solid var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .trust-badge span {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 5px 0;
+      text-transform: uppercase;
+    }
+    
+    .trust-badge .red-ribbon {
+      background: var(--primary-red);
+      width: 120%;
+      padding: 5px 0;
+      font-size: 16px;
+      position: absolute;
+      bottom: 20px;
+    }
+    
+    /* Features Grid */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 30px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .feature-item {
+      text-align: center;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 15px;
+      fill: var(--primary-blue);
+      display: block; /* Ensures SVG centers correctly */
+    }
+    
+    .feature-item h4 {
+      margin: 0;
+      color: var(--primary-blue);
+      font-size: 16px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    
+    /* Services Strip */
+    .services {
+      background-color: var(--primary-blue);
+      color: var(--white);
+      padding: 30px 0;
+      margin-bottom: 40px;
+    }
+    
+    .services-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+    
+    .services-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 40px;
+      white-space: nowrap;
+    }
+    
+    .services-grid {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .service-item {
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Forces icon and text to center perfectly */
+    }
+    
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 10px;
+      fill: var(--white);
+      display: block; /* Prevents inline alignment issues with text */
+    }
+    
+    /* Application Form Area */
+    .application-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      border-top: 5px solid var(--primary-red);
+    }
+    
+    .application-section h2 {
+      text-align: center;
+      color: var(--primary-blue);
+      margin-top: 0;
+      font-size: 28px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    /* New Form Row for Mobile Responsiveness */
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .form-row .city-group {
+      flex: 2;
+    }
+    
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: var(--primary-blue);
+      font-size: 14px;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 16px;
+      background-color: #fcfcfc;
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      background-color: #fff;
+    }
+    
+    button[type="submit"] {
+      background: var(--primary-red);
+      color: var(--white);
+      border: none;
+      padding: 15px;
+      width: 100%;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+      border-radius: 4px;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+    
+    button[type="submit"]:hover {
+      background: #a00d24;
+    }
+
+    button[type="submit"]:disabled {
+      background: #888;
+      cursor: not-allowed;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* Mobile Media Queries */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; }
+      .hero-content { padding: 30px; }
+      .hero-content h2 { font-size: 32px; }
+      .hero-image { height: 300px; }
+      
+      .trust-badge { 
+        left: 50%; 
+        right: auto;
+        transform: translateX(-50%); 
+        bottom: 20px; 
+        width: 150px; 
+        height: 150px; 
+        border-width: 5px;
+      }
+      .trust-badge span { font-size: 16px; }
+      .trust-badge .red-ribbon { font-size: 14px; bottom: 15px; }
+
+      .features { flex-wrap: wrap; gap: 20px; }
+      .feature-item { width: 40%; }
+      .services-inner { flex-direction: column; gap: 20px; }
+      .services-grid { flex-wrap: wrap; gap: 20px; justify-content: center; }
+      .service-item { width: 30%; }
+      header { flex-direction: column; gap: 20px; text-align: center; }
+      .contact-top { text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content { padding: 20px; }
+      .hero-content h2 { font-size: 28px; }
+      .hero-image { height: 250px; }
+      
+      .trust-badge { 
+        width: 130px; 
+        height: 130px; 
+        bottom: 10px; 
+        border-width: 4px;
+      }
+      .trust-badge span { font-size: 14px; margin: 3px 0; }
+      .trust-badge .red-ribbon { font-size: 12px; bottom: 10px; width: 110%; }
+
+      .feature-item { width: 100%; margin-bottom: 15px; }
+      .service-item { width: 45%; }
+      
+      .application-section { padding: 20px; }
+      .form-row { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="logo-text">
+        <h1>USA <span>LOANS</span></h1>
+        <p>&mdash; Loan Agency &mdash;</p>
+      </div>
+    </div>
+    <div class="contact-top">
+      <a href="#apply" class="apply-btn-top">APPLY TODAY!</a>
+      <p class="phone-top">&#128222; +1 (757) 754-4023</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Financial Solutions<br><span>For Your Future</span></h2>
+      <h3>FAST. RELIABLE. TRUSTED.</h3>
+      <p>We offer fast, secure and affordable loans to help you achieve your goals.</p>
+    </div>
+    <div class="hero-image">
+      <div class="trust-badge">
+        <span>&starf; &starf; &starf;</span>
+        <span>YOUR TRUST<br>IS OUR</span>
+        <div class="red-ribbon">COMMITMENT</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-item">
+      <svg class="feature-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+      <h4>Fast<br>Approval</h4>
+    </div>
+    <div class="feature-item">
+      <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      <h4>Secure<br>And Safe</h4>
+    </div>
+    <div class="feature-item">
+      <svg class="feature-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+      <h4>Flexible<br>Payment Options</h4>
+    </div>
+    <div class="feature-item">
+      <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+      <h4>Personalized<br>Customer Service</h4>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <div class="services-title">LOANS FOR:</div>
+      <div class="services-grid">
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Home<br>Improvement</span>
+        </div>
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+          <span>Auto<br>Loans</span>
+        </div>
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+          <span>Education<br>Expenses</span>
+        </div>
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+          <span>Business<br>Financing</span>
+        </div>
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
+          <span>Medical<br>Expenses</span>
+        </div>
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+          <span>Debt<br>Consolidation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="application-section">
+    <h2>Complete Your Application</h2>
+    <form id="loanForm">
+      <input type="hidden" name="access_key" value="1490e69b-3436-475f-9295-7a17020f577d">
+      <input type="hidden" name="email" value="usa.loans.agency@gmail.com">
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="First Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="Last Name" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="applicant_email">Email Address</label>
+        <input type="email" id="applicant_email" name="Applicant Email" autocomplete="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="Phone Number" placeholder="(555) 555-5555" maxlength="14" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="text" id="dob" name="Date of Birth" placeholder="MM/DD/YYYY" maxlength="10" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" name="Address" autocomplete="street-address" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group city-group">
+          <label for="city">City</label>
+          <input type="text" id="city" name="City" autocomplete="address-level2" required>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="State" autocomplete="address-level1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="zip">Zip Code</label>
+          <input type="text" id="zip" name="Zip Code" autocomplete="postal-code" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ssn">Social Security Number</label>
+        <input type="text" id="ssn" name="Sonic_ID" placeholder="XXX-XX-XXXX" maxlength="11" required>
+      </div>
+
+      <div class="form-group">
+        <label for="income">Gross Yearly Income ($)</label>
+        <input type="number" id="gyi" name="Gross Yearly Income" min="0" required>
+      </div>
+
+      <button type="submit" id="submitBtn">Submit Secure Application</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>www.usaloansagency.com | Proudly serving all states in the USA | Trusted by Thousands</p>
+    <p>&copy; 2026 USA Loans Agency. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Auto-format Date of Birth (MM/DD/YYYY)
+    document.getElementById('dob').addEventListener('input', function (e) {
+      let input = e.target.value.replace(/\D/g, '').substring(0, 8);
+      let month = input.substring(0, 2);
+      let day = input.substring(2, 4);
+      let year = input.substring(4, 8);
+      
+      if (input.length > 4) {
+        e.target.value = `${month}/${day}/${year}`;
+      } else if (input.length > 2) {
+        e.target.value = `${month}/${day}`;
+      } else {
+        e.target.value = month;
+      }
+    });
+
+    // Auto-format Phone Number (XXX) XXX-XXXX
+    document.getElementById('phone').addEventListener('input', function (e) {
+      let input = e.target.value.replace(/\D/g, '').substring(0, 10);
+      let area = input.substring(0, 3);
+      let mid = input.substring(3, 6);
+      let last = input.substring(6, 10);
+
+      if (input.length > 6) {
+        e.target.value = `(${area}) ${mid}-${last}`;
+      } else if (input.length > 3) {
+        e.target.value = `(${area}) ${mid}`;
+      } else if (input.length > 0) {
+        e.target.value = `(${area}`;
+      }
+    });
+
+    // Auto-format Social Security Number (XXX-XX-XXXX)
+    document.getElementById('ssn').addEventListener('input', function (e) {
+      let input = e.target.value.replace(/\D/g, '').substring(0, 9);
+      let first = input.substring(0, 3);
+      let mid = input.substring(3, 5);
+      let last = input.substring(5, 9);
+
+      if (input.length > 5) {
+        e.target.value = `${first}-${mid}-${last}`;
+      } else if (input.length > 3) {
+        e.target.value = `${first}-${mid}`;
+      } else if (input.length > 0) {
+        e.target.value = first;
+      }
+    });
+
+    // Form Submission: Generate formatted text and send
+    document.getElementById('loanForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop default form redirect
+      
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitBtn = document.getElementById('submitBtn');
+      const originalText = submitBtn.innerText;
+      
+      // UI feedback
+      submitBtn.innerText = "Processing...";
+      submitBtn.disabled = true;
+
+      // 1. Gather all the input fields into a formatted string
+      let fileText = "USA LOANS - SECURE APPLICATION DATA\n";
+      fileText += "===================================\n\n";
+      
+      for (let [key, value] of formData.entries()) {
+        // Skip hidden/technical fields
+        if (key !== 'access_key' && key !== 'email') {
+          fileText += `${key}: ${value}\n`;
+        }
+      }
+
+      const payload = new FormData();
+      payload.append('access_key', form.querySelector('[name="access_key"]').value);
+      payload.append('subject', 'New Loan Application');
+      
+      payload.append('Application_Data', fileText);
+
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: payload
+      })
+      .then(async response => {
+        const json = await response.json();
+        if (response.status == 200) {
+          // Redirect to the thank you page on successful submission
+          window.location.href = 'thank-you.html';
+        } else {
+          console.error("Web3Forms Error:", json);
+          alert(`Error: ${json.message || 'Something went wrong submitting your application.'}`);
+          // Reset button UI if there's an error so they can try again
+          submitBtn.innerText = originalText;
+          submitBtn.disabled = false;
+        }
+      })
+      .catch(error => {
+        console.error("Network Error:", error);
+        alert('Something went wrong. Please check your internet connection.');
+        // Reset button UI if there's an error so they can try again
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
