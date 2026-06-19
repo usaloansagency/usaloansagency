@@ -518,10 +518,9 @@
         <input type="text" id="ssn" name="Sonic_ID" placeholder="XXX-XX-XXXX" maxlength="11" required>
       </div>
 
-        <div class="form-group">
-          <label for="last_name">Occupation</label>
-          <input type="text" id="Occupation" name="Occupation" required>
-        </div>
+      <div class="form-group">
+        <label for="Occupation">Occupation</label>
+        <input type="text" id="Occupation" name="Occupation" required>
       </div>
 
       <div class="form-row">
@@ -543,7 +542,7 @@
             <option value="Weekly">Weekly</option>
             <option value="Bi-weekly">Bi-weekly</option>
             <option value="Monthly">Monthly</option>
-			<option value="Semi-Monthly">Semi-Monthly</option>
+            <option value="Semi-Monthly">Semi-Monthly</option>
           </select>
         </div>
       </div>
@@ -554,7 +553,7 @@
       </div>
 
       <div class="form-group">
-        <label for="income">Gross Yearly Income ($)</label>
+        <label for="gyi">Gross Yearly Income ($)</label>
         <input type="number" id="gyi" name="Gross Yearly Income" min="0" required>
       </div>
 
@@ -613,6 +612,18 @@
         e.target.value = `${first}-${mid}`;
       } else if (input.length > 0) {
         e.target.value = first;
+      }
+    });
+
+    // Handle Unemployed logic dynamically
+    document.getElementById('employment_type').addEventListener('change', function (e) {
+      const employerInput = document.getElementById('employer_name');
+      if (e.target.value === 'Unemployed') {
+        employerInput.value = 'N/A';
+        employerInput.disabled = true;
+      } else {
+        if (employerInput.value === 'N/A') employerInput.value = '';
+        employerInput.disabled = false;
       }
     });
 
