@@ -595,26 +595,11 @@
       submitBtn.disabled = true;
 
       // 1. Gather all the input fields into a formatted string
-      let fileText = "USA LOANS - SECURE APPLICATION DATA\n";
-      fileText += "===================================\n\n";
-      
-      for (let [key, value] of formData.entries()) {
-        // Skip hidden/technical fields
-        if (key !== 'access_key' && key !== 'email') {
-          fileText += `${key}: ${value}\n`;
-        }
-      }
-
-      const payload = new FormData();
-      payload.append('access_key', form.querySelector('[name="access_key"]').value);
-      payload.append('subject', 'New Loan Application');
-      
-      payload.append('Application_Data', fileText);
-
+      formData.append('subject', 'New Loan Application');
 
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: payload
+        body: formData
       })
       .then(async response => {
         const json = await response.json();
