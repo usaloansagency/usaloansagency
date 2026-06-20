@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>USA Loans - Financial Solutions</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJRMQ02J8L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YJRMQ02J8L');
+  </script>
+  
   <style>
     :root {
       --primary-blue: #0b2240;
@@ -650,8 +660,19 @@
       .then(async response => {
         const json = await response.json();
         if (response.status == 200) {
-          // Redirect to the thank you page on successful submission
-          window.location.href = 'thank-you.html';
+          // Trigger GA4 Event on successful form submission
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              'event_category': 'form_submission',
+              'event_label': 'Loan Application',
+              'value': 1
+            });
+          }
+
+          // Delay the redirect slightly so the GA4 event has time to fire successfully
+          setTimeout(() => {
+            window.location.href = 'thank-you.html';
+          }, 300);
         } else {
           console.error("Web3Forms Error:", json);
           alert(`Error: ${json.message || 'Something went wrong submitting your application.'}`);
